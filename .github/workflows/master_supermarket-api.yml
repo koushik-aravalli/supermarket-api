@@ -22,13 +22,19 @@ jobs:
           dotnet-version: '5.0.x'
           include-prerelease: true
 
+      - run: |
+          ls
+
       - name: Build with dotnet
+        if: ${{ false }} 
         run: dotnet build ./Supermarket.API --configuration Release
 
       - name: dotnet publish
+        if: ${{ false }} 
         run: dotnet publish ./Supermarket.API -c Release -o ${{env.DOTNET_ROOT}}/supermarketApi
 
       - name: Upload artifact for deployment job
+        if: ${{ false }} 
         uses: actions/upload-artifact@v2
         with:
           name: .net-app

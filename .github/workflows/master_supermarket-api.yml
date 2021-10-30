@@ -24,11 +24,11 @@ jobs:
 
       - name: Build with dotnet
         #if: ${{ false }} 
-        run: dotnet build ./src/Supermarket.API --configuration Release
+        run: dotnet build ./src/Supermarket.API
 
       - name: dotnet publish
         # if: ${{ false }} 
-        run: dotnet publish ./src/Supermarket.API -c Release -o ${{env.DOTNET_ROOT}}/supermarketApi
+        run: dotnet publish ./src/Supermarket.API -o ${{env.DOTNET_ROOT}}/supermarketApi
 
       - name: Upload artifact for deployment job
         #if: ${{ false }} 
